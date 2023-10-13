@@ -14,7 +14,6 @@ public class IncrementHood extends CommandBase {
 
     @Override
     public void initialize() {
-        System.out.println(hood.getTargetPosition() + increment);
         hood.setTargetPosition(hood.getTargetPosition() + increment);
     }
 
@@ -23,3 +22,4 @@ public class IncrementHood extends CommandBase {
         return hood.atPosition();
     }
 }
+ 
