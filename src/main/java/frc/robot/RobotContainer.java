@@ -25,8 +25,8 @@ public class RobotContainer {
   private void configureBindings() {
     xbox.leftBumper().whileTrue(new DriveCommand());
 
-    Trigger hoodStepUp = new Trigger(() -> xbox.getRightY() < -0.1);
-    Trigger hoodStepDown = new Trigger(() -> xbox.getRightY() > 0.1);
+    Trigger hoodStepUp = new Trigger(() -> xbox.getLeftY() < -0.25);
+    Trigger hoodStepDown = new Trigger(() -> xbox.getLeftY() > 0.25);
 
     xbox.leftBumper().negate().and(hoodStepUp).whileTrue(
         new RepeatCommand(
@@ -39,7 +39,10 @@ public class RobotContainer {
                 new IncrementHood(-0.5),
                 new WaitCommand(0.1))));
 
-    xbox.a().onTrue(new Shoot(0.4));
+    xbox.a().onTrue(new Shoot(1, 1));
+    xbox.b().onTrue(new Shoot(1, 2));
+    xbox.x().onTrue(new Shoot(1, 3));
+    xbox.y().onTrue(new Shoot(1, 4));
   }
 
   public Command getAutonomousCommand() {

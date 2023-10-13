@@ -15,7 +15,7 @@ public class Shooter extends SubsystemBase {
         motor.setIdleMode(IdleMode.kCoast);
         motor.setInverted(false);
 
-        motor.setOpenLoopRampRate(2);
+        motor.setOpenLoopRampRate(1);
     }
 
     public void setSpeed(double speed) {
