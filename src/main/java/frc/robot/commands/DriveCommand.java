@@ -19,9 +19,9 @@ public class DriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double leftSpeed = deadzone(RobotContainer.xbox.getLeftY() * 0.5);
-    double rightSpeed = deadzone(RobotContainer.xbox.getRightY() * 0.5);
-    drivetrain.setSpeeds(leftSpeed, rightSpeed);
+    double speed = deadzone(RobotContainer.xbox.getLeftY() * 0.2);
+    double rotation = deadzone(RobotContainer.xbox.getLeftX() * 0.3);
+    drivetrain.setSpeeds(speed, rotation);
   }
 
   public double deadzone(double input) {
