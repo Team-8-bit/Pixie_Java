@@ -39,10 +39,10 @@ public class RobotContainer {
                 new IncrementHood(-0.5),
                 new WaitCommand(0.1))));
 
-    xbox.a().onTrue(new Shoot(1, 1));
-    xbox.b().onTrue(new Shoot(1, 2));
-    xbox.x().onTrue(new Shoot(1, 3));
-    xbox.y().onTrue(new Shoot(1, 4));
+    xbox.a().onTrue(new Shoot(0.5, 1));
+    xbox.b().onTrue(new Shoot(0.5, 2));
+    xbox.x().onTrue(new Shoot(1, 1));
+    xbox.y().onTrue(new Shoot(1, 2));
   }
 
   public Command getAutonomousCommand() {
